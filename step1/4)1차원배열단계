@@ -3,9 +3,9 @@
 #include <set>
 using namespace std;
 
-int main() {
+void q1() {
 	// 1번 : 개수 세기
-	/*int N, v;
+	int N, v;
 	cin >> N;
 	vector<int> num(N);
 
@@ -19,12 +19,13 @@ int main() {
 		if(num[i] == v)
 			sum += 1;
 	}
-		
-	cout << sum;*/
 
+	cout << sum;
+}
 
+void q2() {
 	// 2번 : X보다 작은 수
-	/*int N, X;
+	int N, X;
 	cin >> N >> X;
 	vector<int> num(N);
 
@@ -34,11 +35,12 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		if (num[i] < X)
 			cout << num[i] << " ";
-	}*/
+	}
+}
 
-
+void q3() {
 	// 3번 : 최소, 최대
-	/*int N;
+	int N;
 	cin >> N;
 	vector<int> num(N);
 
@@ -57,34 +59,36 @@ int main() {
 			min_num = num[i];
 	}
 
-	cout << min_num << " " << max_num;*/
+	cout << min_num << " " << max_num;
+}
 
-
+void q4() {
 	// 4번 : 최댓값
-	//int N = 9;
-	//vector<int> num(N);
+	int N = 9;
+	vector<int> num(N);
 
-	//for (int i = 0; i < N; i++)
-	//	cin >> num[i];
+	for (int i = 0; i < N; i++)
+		cin >> num[i];
 
-	//int max_num = 0;
-	//int order = 1; // 최대값이 num[0] 인 경우 초기화 되지 않으면 0으로 출력될 수 있기 때문에 1로 표기
-	//for (int i = 0; i < N; i++) {
-	//	if (i == 0) {
-	//		max_num = num[i];
-	//	}
-	//	else if (max_num < num[i]) {
-	//		max_num = num[i];
-	//		order = i;
-	//	}
-	//		
-	//}
+	int max_num = 0;
+	int order = 1; // 최대값이 num[0] 인 경우 초기화 되지 않으면 0으로 출력될 수 있기 때문에 1로 표기
+	for (int i = 0; i < N; i++) {
+		if (i == 0) {
+			max_num = num[i];
+		}
+		else if (max_num < num[i]) {
+			max_num = num[i];
+			order = i;
+		}
+			
+	}
 
-	//cout << max_num << "\n" << order;
+	cout << max_num << "\n" << order;
+}
 
-
+void q5() {
 	// 5번 : 공 넣기
-	/*int N, M;
+	int N, M;
 	cin >> N >> M;
 	vector<int> num(100);
 	int a, b, c;
@@ -98,11 +102,12 @@ int main() {
 
 	for (int i = 1; i <= N; i++) {
 		cout << num[i] << " ";
-	}*/
+	}
+}
 
-
+void q6() {
 	// 6번 : 공 바꾸기
-	/*int N, M;
+	int N, M;
 	cin >> N >> M;
 	vector<int> num(100);
 	int a, b;
@@ -121,11 +126,12 @@ int main() {
 
 	for (int i = 1; i <= N; i++) {
 		cout << num[i] << " ";
-	}*/
+	}
+}
 
-
+void q7() {
 	// 7번 : 과제  안 내신 분...?
-	/*vector<int> num(30);
+	vector<int> num(30);
 	int a =0;
 
 	for (int i = 0; i < 30; i++) {
@@ -145,21 +151,24 @@ int main() {
 	for (int i = 0; i < 30; i++) {
 		if(num[i] != 0)
 			cout << num[i] << "\n";
-	}*/
+	}
+}
 
+void q8() {
 	// 8번 : 나머지
-	//set<int> arr_set;      // 중복 제거용 set
-	//int a = 0;
+	set<int> arr_set;      // 중복 제거용 set
+	int a = 0;
 
-	//for (int i = 0; i < 10; i++) {
-	//	cin >> a;
-	//	arr_set.insert(a%42);
-	//}
+	for (int i = 0; i < 10; i++) {
+		cin >> a;
+		arr_set.insert(a%42);
+	}
 
-	//cout << arr_set.size(); // 서로 다른 나머지 개수 출력
-
+	cout << arr_set.size(); // 서로 다른 나머지 개수 출력
+}
+void q9() {
 	// 9번 : 바구니 뒤집기
-	/*int N, M;
+	int N, M;
 	cin >> N >> M;
 	vector<int> num(100);
 	int a, b;
@@ -179,10 +188,36 @@ int main() {
 
 	for (int i = 1; i <= N; i++) {
 		cout << num[i] << " ";
-	}*/
+	}
+}
 
+void q9_2() {
+	int N, M;
+	cin >> N >> M;
+	int num[100];
+	int a, b;
+
+	for (int i = 1; i <= N; i++) {
+		num[i] = i;
+	}
+
+	for (int i = 1; i <= M; i++) {
+		cin >> a >> b;
+		while (a < b) {
+			swap(num[a], num[b]);
+			a++;
+			b--;
+		}
+	}
+
+	for (int i = 1; i <= N; i++) {
+		cout << num[i] << " ";
+	}
+}
+
+void q10() {
 	// 10번 : 평균
-	int N= 0;
+	int N = 0;
 	cin >> N;
 	vector<float> score(N);
 
@@ -202,7 +237,7 @@ int main() {
 		score[i] = score[i] / max * 100.0;
 	}
 
-	float sum= 0;
+	float sum = 0;
 	for (int i = 0; i < N; i++) {
 		sum += score[i];
 	}
@@ -210,6 +245,66 @@ int main() {
 	cout << fixed;
 	cout.precision(3);
 	cout << sum / N;
+}
+
+
+int main() {
+	while (1) {
+		int num = 0;
+		cout << "0~11까지의 번호를 입력하세요(0은 프로그램 종료, 10은 9-2, 11은 10번 문제)" << "\n";
+		cin >> num;
+		switch (num) {
+		case 1:
+			cout << "1번 문제\n";
+			q1();
+			break;
+		case 2:
+			cout << "2번 문제\n";
+			q2();
+			break;
+		case 3:
+			cout << "3번 문제\n";
+			q3();
+			break;
+		case 4:
+			cout << "4번 문제\n";
+			q4();
+			break;
+		case 5:
+			cout << "5번 문제\n";
+			q5();
+			break;
+		case 6:
+			cout << "6번 문제\n";
+			q6();
+			break;
+		case 7:
+			cout << "7번 문제\n";
+			q7();
+			break;
+		case 8:
+			cout << "8번 문제\n";
+			q8();
+			break;
+		case 9:
+			cout << "9번 문제\n";
+			q9();
+			break;
+		case 10:
+			cout << "9-2번 문제\n";
+			q9_2();
+			break;
+		case 11:
+			cout << "10번 문제\n";
+			q10();
+			break;
+		case 0:
+			cout << "프로그램 종료\n";
+			return 0;
+		}
+
+		cout << "\n" << "----------------" << "\n";
+	}
 
 	return 0;
 }
