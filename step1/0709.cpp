@@ -5,11 +5,10 @@ using namespace std;
 
 int main() {
 
-
 	return 0;
 }
 
-
+// 직각삼각형[4153번]
 void triangle() {
 	while (true) {
 		int a, b, c;
@@ -31,6 +30,7 @@ void triangle() {
 	}
 }
 
+// 웰컴키트[30802번]
 void welcomeKit() {
 	int n, s, m, l, xl, xxl, xxxl, t, p, tSum = 0;
 	cin >> n >> s >> m >> l >> xl >> xxl >> xxxl >> t >> p;
