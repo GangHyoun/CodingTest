@@ -24,7 +24,7 @@ void q1() {
 	int n, m;
 	cin >> m >> n;
 
-	for (int i = m; i < n; i++) {
+	for (int i = m; i <= n; i++) {
 		if (isPrime(i)) {
 			cout << i << "\n";
 		}
